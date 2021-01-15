@@ -6,17 +6,15 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $newIndex = fopen('index_new.php', 'w');
-fwrite($newIndex,
+fwrite($newIndex, 
     "<?php header('Content-type: application/xml'); 
-    echo <<<EOL
-    <?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <rss version=\"2.0\"
-    xmlns:content=\"http://purl.org/rss/1.0/modules/content/\"
-    xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
-    xmlns:itunes=\"http://www.itunes.com/dtds/podcast-1.0.dtd\"
-    xmlns:trackback=\"http://madskills.com/public/xml/rss/module/trackback/\">
-    <channel>
-    EOL;
+    echo '<?xml version=\"1.0\" encoding=\"UTF-8\"?>';
+    echo '<rss version=\"2.0\"';
+    echo 'xmlns:content=\"http://purl.org/rss/1.0/modules/content/\"';
+    echo 'xmlns:dc=\"http://purl.org/dc/elements/1.1/\"';
+    echo 'xmlns:itunes=\"http://www.itunes.com/dtds/podcast-1.0.dtd\"';
+    echo 'xmlns:trackback=\"http://madskills.com/public/xml/rss/module/trackback/\">';
+    echo '<channel>';
     ?>"
 );
 
